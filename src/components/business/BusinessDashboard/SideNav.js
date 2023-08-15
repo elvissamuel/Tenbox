@@ -1,8 +1,8 @@
 import { Fragment, useState } from 'react'
 import { Dialog, Menu, Transition } from '@headlessui/react'
-import coloredLogo from '../../assets/imgs/tenboxColored.png'
-import logo from '../../assets/imgs/tenbox-logo.png'
-import userIcon from '../../assets/imgs/ceo.png'
+import coloredLogo from '../../../assets/imgs/tenboxColored.png'
+import logo from '../../../assets/imgs/tenbox-logo.png'
+import userIcon from '../../../assets/imgs/ceo.png'
 import {
   Bars3Icon,
   BellIcon,
@@ -338,9 +338,9 @@ const SideNav = () => {
 
           <main className="py-10">
             <div className="px-4 sm:px-6 lg:px-8">
-               <BusinessTable /> 
+               <BusinessTable />
                <div>
-                 <BusinessChart />
+                 {/* <BusinessChart /> */}
                </div>
             </div>
           </main>

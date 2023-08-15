@@ -1,10 +1,11 @@
 import React from 'react'
-import logo from '../assets/imgs/tenbox-logo.png'
-import bg from '../assets/imgs/ loginBg.png'
-import ceo from '../assets/imgs/ceo.png'
-import googleIcon from '../assets/imgs/googleIcon.png'
+import logo from '../../assets/imgs/tenbox-logo.png'
+import bg from '../../assets/imgs/ loginBg.png'
+import ceo from '../../assets/imgs/ceo.png'
+import googleIcon from '../../assets/imgs/googleIcon.png'
+import { Link } from 'react-router-dom'
 
-const Signup = () => {
+const BusinessSignup = () => {
   return (
     <div className="flex min-h-screen font-lato">
     <div className="relative hidden w-[40%] px-10 py-4 lg:block">
@@ -131,12 +132,14 @@ const Signup = () => {
              </div>
 
              <div>
-               <button
-                 type="submit"
-                 className="flex w-full justify-center rounded-md bg-[#0069FF] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#006affd0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0069FF]"
-               >
-                 Sign up
-               </button>
+               <Link to='/business/signin'>
+                 <button
+                   type="submit"
+                   className="flex w-full justify-center rounded-md bg-[#0069FF] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#006affd0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0069FF]"
+                 >
+                   Sign up
+                 </button>
+               </Link>
              </div>
            </form>
          </div>
@@ -169,4 +172,4 @@ const Signup = () => {
   )
 }
 
-export default Signup
+export default BusinessSignup

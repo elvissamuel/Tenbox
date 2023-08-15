@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
-import LineChart from '../charts/LineChart'
-import { UserData } from '../../TestData'
-import BarChart from '../charts/BarChart'
+import LineChart from '../../charts/LineChart'
+import { UserData } from '../../../TestData'
+import BarChart from '../../charts/BarChart'
 import { ArrowDownTrayIcon } from '@heroicons/react/20/solid'
 import { PlusCircleIcon } from '@heroicons/react/24/outline'
 

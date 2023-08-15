@@ -1,9 +1,10 @@
 import React, { useState } from 'react'
-import logo from '../assets/imgs/tenbox-logo.png'
-import bg from '../assets/imgs/ loginBg.png'
-import ceo from '../assets/imgs/ceo.png'
-import businessImg from '../assets/imgs/buildings.png'
-import logisticsImg from '../assets/imgs/truckfast.png'
+import logo from '../../assets/imgs/tenbox-logo.png'
+import bg from '../../assets/imgs/ loginBg.png'
+import ceo from '../../assets/imgs/ceo.png'
+import businessImg from '../../assets/imgs/buildings.png'
+import logisticsImg from '../../assets/imgs/truckfast.png'
+import { Link } from 'react-router-dom'
 
 const ContinueToDashboard = () => {
   return (
@@ -64,7 +65,9 @@ const ContinueToDashboard = () => {
                 </div>
             </div>
 
-            <button className='w-full bg-[#0069FF] text-white rounded-lg py-2'>Continue to dashboard</button>
+            <Link to='/business/dashboard'>
+                <button className='w-full bg-[#0069FF] text-white rounded-lg py-2'>Continue to dashboard</button>
+            </Link>
           </div>
         </div>
        

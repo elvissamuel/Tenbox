@@ -1,15 +1,15 @@
 import React, { useState } from 'react'
-import logo from '../assets/imgs/tenbox-logo.png'
-import bg from '../assets/imgs/ loginBg.png'
-import ceo from '../assets/imgs/ceo.png'
-import googleIcon from '../assets/imgs/googleIcon.png'
+import logo from '../../assets/imgs/tenbox-logo.png'
+import bg from '../../assets/imgs/ loginBg.png'
+import ceo from '../../assets/imgs/ceo.png'
+import googleIcon from '../../assets/imgs/googleIcon.png'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { login, updateName } from '../features/User'
+import { login, updateName } from '../../features/User'
 import { useRef } from 'react'
 
 
-const Login = () => {
+const BusinessSignin = () => {
   const user = useSelector((state)=>state.user.value);
   const dispatch = useDispatch()
   const inputRef = useRef(null)
@@ -133,12 +133,14 @@ const Login = () => {
                   </div>
 
                   <div>
-                    <button
-                      type="submit"
-                      className="flex w-full justify-center rounded-md bg-[#0069FF] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#006affd0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0069FF]"
-                    >
-                      Sign in
-                    </button>
+                    <Link to='/business/verify'>
+                      <button
+                        type="submit"
+                        className="flex w-full justify-center rounded-md bg-[#0069FF] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#006affd0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#0069FF]"
+                      >
+                        Sign in
+                      </button>
+                    </Link>
                   </div>
                 </form>
               </div>
@@ -172,4 +174,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default BusinessSignin

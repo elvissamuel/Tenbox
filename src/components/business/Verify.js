@@ -1,11 +1,11 @@
 import React, { useState } from 'react'
-import logo from '../assets/imgs/tenbox-logo.png'
-import bg from '../assets/imgs/ loginBg.png'
-import ceo from '../assets/imgs/ceo.png'
-import googleIcon from '../assets/imgs/googleIcon.png'
+import logo from '../../assets/imgs/tenbox-logo.png'
+import bg from '../../assets/imgs/ loginBg.png'
+import ceo from '../../assets/imgs/ceo.png'
+import googleIcon from '../../assets/imgs/googleIcon.png'
 import { Link } from 'react-router-dom'
 import { useSelector, useDispatch } from 'react-redux'
-import { login, updateName } from '../features/User'
+import { login, updateName } from '../../features/User'
 import { useRef } from 'react'
 
 
@@ -142,7 +142,11 @@ const handleInput6 = (e)=>{
              <input ref={inputRef6} maxLength={1} value={input6} onInput={(e)=>handleInput6(e)} type="text" className='border w-12' />
          </div>
 
-         <button disabled={input6 === ''} className={`border px-32 rounded-xl py-2 my-6 block ${input6 === '' ? 'bg-gray-300 text-gray-100' : 'bg-[#0069FF] text-white'}`}>Continue</button>
+         <Link to='/continuetodashboard'>
+             <button disabled={input6 === ''} className={`border px-32 rounded-xl py-2 my-6 block ${input6 === '' ? 'bg-gray-300 text-gray-100' : 'bg-[#0069FF] text-white'}`}>
+                Continue
+             </button>
+         </Link>
          <p className='text-base text-center text-gray-600'>Resend code: 0:12</p>
 
        </div>

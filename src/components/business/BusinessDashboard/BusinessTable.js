@@ -1,23 +1,73 @@
 import React from 'react'
+import dhl from '../../../assets/imgs/dhl.png'
+import kwik from '../../../assets/imgs/kwik.png'
+import StatusButton from './StatusButton';
+import sendstack from '../../../assets/imgs/sendstack.png'
+import magneto from '../../../assets/imgs/magneto.png'
+import shopify from '../../../assets/imgs/shopify.png'
+import aramex from '../../../assets/imgs/aramex.png'
+import {BiDotsVerticalRounded} from 'react-icons/bi'
+import {FaReact} from 'react-icons/fa'
+
+
+
+const generateRandomString = () => {
+  const characters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789';
+  let randomString = '';
+
+  for (let i = 0; i < 11; i++) {
+    const randomIndex = Math.floor(Math.random() * characters.length);
+    randomString += characters[randomIndex];
+  }
+
+  return randomString;
+};
 
 const transactions = [
     {
-      id: 'AAPS0L',
-      company: 'Chase & Co.',
-      share: 'CAC',
-      commission: '+$4.37',
-      price: '$3,509.00',
-      quantity: '12.00',
-      netAmount: '$4,397.00',
+      logo: kwik,
+      trackingId: generateRandomString(),
+      packageType: 'Small Box',
+      packageCategory: 'Accesories',
+      shipmentDate: '25-Jul-2023',
+      status: <StatusButton status='Scheduled' />,
+      netAmount: <BiDotsVerticalRounded size={20} />,
     },
     {
-      id: 'AAPS0L',
-      company: 'Chase & Co.',
-      share: 'CAC',
-      commission: '+$4.37',
-      price: '$3,509.00',
-      quantity: '12.00',
-      netAmount: '$4,397.00',
+      logo: dhl,
+      trackingId: generateRandomString(),
+      packageType: 'Flyer',
+      packageCategory: 'Cosmetics',
+      shipmentDate: '12-Aug-2023',
+      status: <StatusButton status='Delivered' />,
+      netAmount: <BiDotsVerticalRounded size={20} />,
+    },
+    {
+      logo: aramex,
+      trackingId: generateRandomString(),
+      packageType: 'Large Box',
+      packageCategory: 'Clothes',
+      shipmentDate: '10-Aug-2023',
+      status: <StatusButton status='Pending' />,
+      netAmount: <BiDotsVerticalRounded size={20} />,
+    },
+    {
+      logo: sendstack,
+      trackingId: generateRandomString(),
+      packageType: 'Flyer',
+      packageCategory: 'Food',
+      shipmentDate: '08-Jun-2023',
+      status: <StatusButton status='Cancelled' />,
+      netAmount: <BiDotsVerticalRounded size={20} />,
+    },
+    {
+      logo: shopify,
+      trackingId: generateRandomString(),
+      packageType: 'Small Box',
+      packageCategory: 'Furniture',
+      shipmentDate: '01-Aug-2023',
+      status: <StatusButton status='Picked up' />,
+      netAmount: <BiDotsVerticalRounded size={20} />,
     },
     // More transactions...
   ]
@@ -29,10 +79,10 @@ const BusinessTable = () => {
         <div className="sm:flex-auto">
           <h1 className="text-base font-semibold leading-6 text-gray-900">Shipments</h1>
           <ul className='text-slate-700 text-base flex gap-4 -mb-6 mt-6'>
-            <li className='border-b-[2px] border-[#0069FF] text-[#0069FF]'>All</li>
-            <li>Ongoing</li>
-            <li>Delivered</li>
-            <li>Returned</li>
+            <li className='border-b-[2px] border-[#0069FF] text-[#0069FF] cursor-pointer'>All</li>
+            <li className='cursor-pointer'>Ongoing</li>
+            <li className='cursor-pointer'>Delivered</li>
+            <li className='cursor-pointer'>Returned</li>
           </ul>
         </div>
         <div className="mt-4 sm:ml-16 sm:mt-0 sm:flex-none">
@@ -100,20 +150,20 @@ const BusinessTable = () => {
               <tbody className="divide-y divide-gray-200 bg-white">
                 {transactions.map((transaction) => (
                   <tr key={transaction.id}>
-                    <td className="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500 sm:pl-0">{transaction.id}</td>
+                    <td className="whitespace-nowrap py-2 pl-4 pr-3 text-sm text-gray-500 sm:pl-0"> <img src={transaction.logo} width='60px' alt="" /></td>
                     <td className="whitespace-nowrap px-2 py-2 text-sm font-medium text-gray-900">
-                      {transaction.company}
+                      {transaction.trackingId}
                     </td>
-                    <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{transaction.share}</td>
-                    <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{transaction.commission}</td>
-                    <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{transaction.price}</td>
-                    <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{transaction.quantity}</td>
+                    <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-900">{transaction.packageType}</td>
+                    <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{transaction.packageCategory}</td>
+                    <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{transaction.shipmentDate}</td>
+                    <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{transaction.status}</td>
                     <td className="whitespace-nowrap px-2 py-2 text-sm text-gray-500">{transaction.netAmount}</td>
-                    <td className="relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
+                    {/* <td className="relative whitespace-nowrap py-2 pl-3 pr-4 text-right text-sm font-medium sm:pr-0">
                       <a href="#" className="text-indigo-600 hover:text-indigo-900">
                         Edit<span className="sr-only">, {transaction.id}</span>
                       </a>
-                    </td>
+                    </td> */}
                   </tr>
                 ))}
               </tbody>

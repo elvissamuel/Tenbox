@@ -5,6 +5,7 @@ import BusinessTable from './BusinessTable'
 const BusinessDashboard = () => {
   return (
     <div>
+        {/* <SideNav /> */}
         <SideNav />
         {/* <BusinessTable /> */}
     </div>
