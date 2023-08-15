@@ -6,9 +6,13 @@ import reportWebVitals from './reportWebVitals';
 import { configureStore } from '@reduxjs/toolkit';
 import { Provider } from 'react-redux';
 import userReducer from './features/User'
+import statusReducer from './features/StatusBtn'
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-const store = configureStore({reducer:{user: userReducer}})
+const store = configureStore({reducer:{
+  user: userReducer, 
+  status: statusReducer,
+}})
 root.render(
   <React.StrictMode>
     <Provider store={store}>
